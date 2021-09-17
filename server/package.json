@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "prestart": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "nodemon": "nodemon"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -15,7 +16,17 @@
     "@types/express": "^4.17.13",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
-    "typescript": "^4.4.3",
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.12",
+    "typescript": "^4.4.3"
+  },
+  
+  "autoAttachChildProcesses": true,
+  "nodemonConfig": {
+    "ignore": ["build/*"],
+    "delay": 500,
+    "watch": ["src"],
+    "exec": "yarn start",
+    "ext": "ts"
   }
 }
