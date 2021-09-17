@@ -1,17 +1,11 @@
-import express from 'express';
 import * as http from 'http';
+import {createApp} from './frontend';
+import {configureIoServer} from './game/ioServer';
 
-const app = express();
-const server = http.createServer(app);
-
+const expressApp = createApp()
+const server = http.createServer(expressApp)
+configureIoServer(server)
 const PORT = process.env.PORT || 3000;
-
-
-app.get('/healthz', (_, res) => {
-    res.json({ o: 'k' });
-});
-
-
 server.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 });
