@@ -1,8 +1,8 @@
 import * as http from 'http'
-import { Server, Socket } from 'socket.io';
-import { configureChatClient, systemMessage } from './chatServer';
-import { CHAT_MESSAGE, SET_NAME } from './events';
-import { getName, setName } from './gameUtils';
+import { Server } from 'socket.io';
+import { configureChatClient } from './chatServer';
+import { SET_NAME } from './events';
+import { setName } from './gameUtils';
 
 export const configureIoServer = (httpServer: http.Server) => {
     const io = new Server(httpServer);
