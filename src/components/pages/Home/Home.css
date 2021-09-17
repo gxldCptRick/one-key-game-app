@@ -1,0 +1,17 @@
+.main-menu__logo {
+    width: 25%;
+    margin: 10px auto;
+}
+
+.main-menu__logo__img {
+    width: 100%;
+}
+
+.main-menu__options {
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
