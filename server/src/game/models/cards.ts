@@ -1,3 +1,5 @@
+import { OneKeyGameState } from "./gameState";
+
 export enum CardColor {
     Red,
     Yellow,
@@ -37,4 +39,8 @@ export const drawCards = (cards: Card[], amountToDraw: number) => {
         cardsDrawn.push(cards.shift()!)
     }
     return cardsDrawn;
+}
+
+export const findCardById = (gameState: OneKeyGameState, id: number) => {
+    return gameState.playerCards.find(c => c.id === id) || gameState.leaderCards.find(c => c.id === id)
 }
