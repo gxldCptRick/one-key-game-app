@@ -9,6 +9,7 @@
     "nodemon": "nodemon"
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
     "socket.io": "^4.2.0"
   },
@@ -20,12 +21,15 @@
     "nodemon": "^2.0.12",
     "typescript": "^4.4.3"
   },
-  
   "autoAttachChildProcesses": true,
   "nodemonConfig": {
-    "ignore": ["build/*"],
+    "ignore": [
+      "build/*"
+    ],
     "delay": 500,
-    "watch": ["src"],
+    "watch": [
+      "src"
+    ],
     "exec": "yarn start",
     "ext": "ts"
   }

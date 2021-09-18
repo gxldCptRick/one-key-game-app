@@ -15,10 +15,14 @@
       #messages > li:nth-child(odd) { background: #efefef; }
     </style>
   </head>
-  <body> 
-    <h1>Demo Apps</h1>
-    <ul>
-      <li><a href="./chatPage.html">Chat App Demo</a></li>
-    </ul>
+  <body>
+    <p><a href="/">Go Back</a></p>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.min.js"></script>
+    <script src="./chatApp.js"></script>
   </body>
 </html>
