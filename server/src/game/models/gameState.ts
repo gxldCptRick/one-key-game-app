@@ -15,6 +15,7 @@ export interface OneKeyGameState {
     playerCards: Card[];
     leaderCards: Card[];
     guessCards: Card[];
+    selectedCardIndex: number | undefined;
     currentRound: number;
 
 }
@@ -29,6 +30,7 @@ export const createInitialGameState: () => OneKeyGameState = () => {
         leaderCards: [],
         guessCards: [],
         cards: shuffleCards(defaultCards()),
+        selectedCardIndex: undefined,
         currentRound: 0,
     }
 }

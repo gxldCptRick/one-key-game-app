@@ -14,3 +14,5 @@ export interface CardColorChangedEvent {
     color: CardColor;
     id: number;
 };
+
+export const INITIALIZE_GAME = "initalize game";

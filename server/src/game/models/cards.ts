@@ -33,7 +33,7 @@ export const shuffleCards = (cards: Card[]) => {
     return cards;
 }
 
-export const drawCards = (cards: Card[], amountToDraw: number) => {
+export const drawCards = (cards: Card[], amountToDraw: number = 1) => {
     let cardsDrawn: Card[] = [];
     for(let i = 0; i < amountToDraw && cards.length > 0; i++){
         cardsDrawn.push(cards.shift()!)
