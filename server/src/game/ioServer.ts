@@ -1,6 +1,6 @@
 import * as http from 'http'
 import { Server } from 'socket.io';
-import { configureChatClient } from './chatServer';
+import { configureChatClient } from '../chat/chatServer';
 import { SET_NAME } from './events';
 import { configureGameServer } from './gameServer';
 import { setName } from './gameUtils';
