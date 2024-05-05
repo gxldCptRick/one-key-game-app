@@ -14,7 +14,10 @@ runs:
         cache: 'npm'
     - run: yarn install --frozen-lockfile
       working-directory: ${{ inputs.working-directory }}
+      shell: bash
     - run: npm run build --if-present
       working-directory: ${{ inputs.working-directory }}
+      shell: bash
     - run: yarn test
       working-directory: ${{ inputs.working-directory }}
+      shell: bash
