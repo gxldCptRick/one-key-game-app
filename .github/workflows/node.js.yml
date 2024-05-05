@@ -13,30 +13,14 @@ jobs:
   build-server:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: './.github/actions/test-node'
       with:
-        node-version: 16.x
-        cache: 'npm'
-    - run: yarn install --frozen-lockfile
-      working-directory: ./server
-    - run: npm run build --if-present
-      working-directory: ./server
-    - run: yarn test
-      working-directory: ./server
+        working-directory: './server'
   build-frontend:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: './.github/actions/test-node'
       with:
-        node-version: 16.x
-        cache: 'npm'
-    - run: yarn install --frozen-lockfile
-      working-directory: ./web
-    - run: npm run build --if-present
-      working-directory: ./web    
-    - run: yarn test
-      working-directory: ./web
+        working-directory: './web'

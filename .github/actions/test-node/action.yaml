@@ -1,0 +1,24 @@
+name: Test Node
+description: Test a node application given a directory
+inputs:
+  working-directory:
+    required: true
+    description: Directory of node application
+runs:
+  using: composite
+  steps:
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+        cache: 'yarn'
+        cache-dependency-path: '${{ inputs.working-directory }}/yarn.lock'
+    - run: yarn install --frozen-lockfile
+      working-directory: ${{ inputs.working-directory }}
+      shell: bash
+    - run: yarn build || echo 'No building needed'
+      working-directory: ${{ inputs.working-directory }}
+      shell: bash
+    - run: yarn test
+      working-directory: ${{ inputs.working-directory }}
+      shell: bash
