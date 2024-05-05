@@ -7,7 +7,7 @@
     "prestart": "tsc",
     "start": "node build/index.js",
     "nodemon": "nodemon",
-    "test": "echo 'Testing placeholder'",
+    "test": "echo 'Testing placeholder'"
   },
   "dependencies": {
     "crypto": "^1.0.1",
