@@ -16,7 +16,7 @@ runs:
     - run: yarn install --frozen-lockfile
       working-directory: ${{ inputs.working-directory }}
       shell: bash
-    - run: yarn build | echo 'No building needed'
+    - run: yarn build || echo 'No building needed'
       working-directory: ${{ inputs.working-directory }}
       shell: bash
     - run: yarn test
